@@ -1,0 +1,163 @@
+{
+    "product": [
+        {
+            "_id": "60d5f9b6b8c2f92b5c724d64",  
+            "product_name": "Vintage Crown Trifari Clip-on Pink Floral Earrings",
+            "category": "Earrings",
+            "subcategory": null,
+            "color" : "Pink",
+            "shade" : "LightCoral",
+            "condition": "Used-Good Condition",
+            "handmade": "No",
+            "store_platform" : "Etsy",
+            "sku": "COSEM-000089",
+            "quantity_in_stock": 1,
+            "unit_price": 12.00,
+            "researched_price": 40.00,
+            "sell_status": "Not Sold",
+            "label_printed": "No",
+            "gemstone": "Glass",
+            "gemstone_details": {
+                "cut": "round brilliant",
+                "color": "white",
+                "clarity": "transparent",
+                "carat_weight": 1,
+                "type": "rhinestone"
+            },
+            "metal_type": "base metal",
+            "metal_details": {
+                "carats" : 24,
+                "plated" : "Gold Plating"
+            },
+            "dimensions" : 
+            {
+                "chain" : {
+                    "length" : null,
+                    "width" : null,
+                    "height" : null
+                },
+                "clasp" : {
+                    "length" : null,
+                    "width" : null,
+                    "height" : null
+                },
+                "focal" : {
+                    "length" : "0.75 in",
+                    "width" : "1.25 in",
+                    "height" : null
+                },
+                "pin" : {
+                    "length" : null,
+                    "width" : null
+                }
+            },
+            "weight_before": "6 oz",
+            "weight_after": "8 oz",
+            "brand": "Crown Trifari",
+            "date_added": "2023-05-01T08:00:00Z",
+            "last_modified": "2023-12-18T14:30:00Z",
+            "date_posted": "2023-12-18T14:30:00Z",
+            "tags": ["vintage", "floral", "1950", "clip on", "earrings", "pink", "gold tone", "crown trifari"],
+            "image_urls": [
+            "C:/coding_projects/elladay_tools/inventory_tool/images/crown_trifari_clip/ct-1.png",
+            "C:/coding_projects/elladay_tools/inventory_tool/images/crown_trifari_clip/ct-2.jpg",
+            "C:/coding_projects/elladay_tools/inventory_tool/images/crown_trifari_clip/ct-3.jpg",
+            "C:/coding_projects/elladay_tools/inventory_tool/images/crown_trifari_clip/ct-4.jpg",
+            "C:/coding_projects/elladay_tools/inventory_tool/images/crown_trifari_clip/ct-5.jpg"
+            ],
+            "status": {
+                "photo" : true,
+                "measuring" : true,
+                "cleaning" : true,
+                "repairing" : true,
+                "weighing" : true,
+                "listing" : true,
+                "boxing" : false
+            },
+            "listing_url" : "https://www.etsy.com/listing/1756141689/vintage-crown-trifari-clip-on-pink",
+            "notes": "Perfect for wedding and anniversary gifts. Comes with a certificate of authenticity.",
+            "label_location" : ""
+        },
+        {
+            "_id": "70d5f9b6b8c2f92b5c724d64",  
+            "product_name": "RARE Vintage 'Volupte' Silver Tone Royal and Lt. Blue Rhinestone Bracelet & Earring Set",
+            "category": "Set",
+            "subcategory": null,
+            "color" : "Blue",
+            "shade" : "DarkBlue",
+            "store_platform" : "Etsy",
+            "condition": "used-good condition",
+            "handmade": "No",
+            "sku": "COSSETM-00095",
+            "quantity_in_stock": 1,
+            "unit_price": 68.00,
+            "researched_price": 40.00,
+            "sell_status": "Not Sold",
+            "label_printed": "No",
+            "metal_type": "Silver",
+            "metal_details": {
+                "carats" : 24,
+                "plated" : "Gold Plating"
+            },
+            "gemstone": "Glass",
+            "gemstone_details": {
+                "cut": "marquise cut",
+                "color": "blue",
+                "clarity": "transparent",
+                "carat_weight": 1,
+                "type": "rhinestone"
+            },
+            "dimensions" : 
+            {
+                "chain" : {
+                    "length" : null,
+                    "width" : null,
+                    "height" : null
+                },
+                "clasp" : {
+                    "length" : null,
+                    "width" : null,
+                    "height" : null
+                },
+                "focal" : {
+                    "length" : "6 in",
+                    "width" : "5 in",
+                    "height" : null
+                },
+                "pin" : {
+                    "length" : null,
+                    "width" : null
+                }
+            },
+            "weight_before": "5 oz",
+            "weight_after": "7 oz",
+            "brand": "Volupte",
+            "date_added": "2023-05-01T08:00:00Z",
+            "last_modified": "2023-12-18T14:30:00Z",
+            "date_posted": "2023-12-18T14:30:00Z",
+            "tags": ["bracelet", "earrings", "set", "silver tone", "blue", "vintage rhinestone", "rare", "volupte"],
+            "image_urls": [
+                "C:/coding_projects/elladay_tools/inventory_tool/images/volupte/volupte.png",
+                "C:/coding_projects/elladay_tools/inventory_tool/images/volupte/vol-1.jpg",
+                "C:/coding_projects/elladay_tools/inventory_tool/images/volupte/vol-2.jpg",
+                "C:/coding_projects/elladay_tools/inventory_tool/images/volupte/vol-3.jpg",
+                "C:/coding_projects/elladay_tools/inventory_tool/images/volupte/vol-4.jpg",
+                "C:/coding_projects/elladay_tools/inventory_tool/images/volupte/vol-5.jpg",
+                "C:/coding_projects/elladay_tools/inventory_tool/images/volupte/vol-6.jpg",
+                "C:/coding_projects/elladay_tools/inventory_tool/images/volupte/vol-7.jpg"
+            ],
+            "status": {
+                "photo" : true,
+                "measuring" : true,
+                "cleaning" : true,
+                "repairing" : true,
+                "weighing" : true,
+                "listing" : true,
+                "boxing" : false
+            },
+            "listing_url" : "https://www.etsy.com/listing/1796303442/rare-vintage-volupte-silver-tone-royal",
+            "notes": "Perfect for wedding and anniversary gifts. Comes with a certificate of authenticity.",
+            "label_location" : ""
+        }
+    ]
+}

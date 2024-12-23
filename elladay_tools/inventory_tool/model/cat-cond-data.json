@@ -1,0 +1,53 @@
+{
+    "conditions": [
+        "new-gem condition",
+        "new-rough condition",
+        "used-good condition",
+        "used-rough condition",
+        "decent"],
+    "categories": [
+        "bracelet",
+        "brooch/pins",
+        "earrings",
+        "loose beads",
+        "miscellaneous",
+        "necklace",
+        "pendant",
+        "ring",
+        "set",
+        "watches"
+    ],
+    "sub-categories": [
+        "vintage",
+        "antique",
+        "contemporary",
+        "fine",
+        "costume",
+        "ethnic/tribal",
+        "art deco",
+        "art nouveau",
+        "minimalist",
+        "boho",
+        "luxury",
+        "vintage-inspired",
+        "wedding",
+        "custom"
+    ],
+    "platforms" : [
+        "etsy",
+        "mercari",
+        "ebay",
+        "poshmark",
+        "live show",
+        "tiktok"
+    ],
+    "sell-stats" : [
+        "sold",
+        "not sold",
+        "on-hold",
+        "processing",
+        "bidding",
+        "pending",
+        "expired"
+    ]
+}

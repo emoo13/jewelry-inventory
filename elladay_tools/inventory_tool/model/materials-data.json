@@ -1,0 +1,422 @@
+{
+    "metals": [
+      {
+        "name": "gold",
+        "types": [
+          "yellow gold",
+          "white gold",
+          "rose gold",
+          "green gold",
+          "pink gold"
+        ],
+        "properties": {
+          "color": "Yellow, White, Pink, Rose",
+          "purity": "10K, 14K, 18K, 22K, 24K",
+          "durability": "Moderately durable, scratches easily",
+          "price_range": "High"
+        }
+      },
+      {
+        "name": "silver",
+        "types": [
+          "sterling silver",
+          "fine silver",
+          "argentium silver",
+          "mexican silver"
+        ],
+        "properties": {
+          "color": "White",
+          "purity": "92.5% (Sterling Silver), 99.9% (Fine Silver)",
+          "durability": "Soft, tarnishes over time",
+          "price_range": "Medium"
+        }
+      },
+      {
+        "name": "platinum",
+        "types": [
+          "pure platinum",
+          "platinum alloy"
+        ],
+        "properties": {
+          "color": "Silvery white",
+          "purity": "90-95%",
+          "durability": "Highly durable, resistant to tarnish",
+          "price_range": "Very High"
+        }
+      },
+      {
+        "name": "palladium",
+        "types": [
+          "palladium alloy"
+        ],
+        "properties": {
+          "color": "White",
+          "purity": "85-95%",
+          "durability": "Durable, hypoallergenic",
+          "price_range": "High"
+        }
+      },
+      {
+        "name": "titanium",
+        "types": [
+          "titanium alloy"
+        ],
+        "properties": {
+          "color": "Silver-gray",
+          "purity": "99%",
+          "durability": "Extremely durable, lightweight",
+          "price_range": "Medium"
+        }
+      },
+      {
+        "name": "stainless steel",
+        "types": [
+          "316l stainless steel",
+          "304 stainless steel"
+        ],
+        "properties": {
+          "color": "Silver-gray",
+          "purity": "100%",
+          "durability": "Very durable, resistant to tarnish and corrosion",
+          "price_range": "Low to Medium"
+        }
+      },
+      {
+        "name": "copper",
+        "types": [
+          "pure copper",
+          "copper alloy"
+        ],
+        "properties": {
+          "color": "Red-orange",
+          "purity": "100%",
+          "durability": "Moderately durable, prone to tarnish",
+          "price_range": "Low"
+        }
+      },
+      {
+        "name": "base metal",
+        "types": [
+          "bronze",
+          "tin",
+          "copper",
+          "nickel",
+          "pewter"
+        ],
+        "properties": {
+          "color": "Any",
+          "purity": "None",
+          "durability": "Durable, depending on the type",
+          "price_range": "Low to Medium"
+        }
+      },
+      {
+        "name": "bronze",
+        "types": [
+          "copper-bronze alloy",
+          "tin-bronze alloy"
+        ],
+        "properties": {
+          "color": "Brownish gold",
+          "purity": "Copper (88%), Tin (12%)",
+          "durability": "Durable, tarnishes over time",
+          "price_range": "Low to Medium"
+        }
+      },
+      {
+        "name": "brass",
+        "types": [
+          "copper-brass alloy"
+        ],
+        "properties": {
+          "color": "Yellowish gold",
+          "purity": "Copper (70%), Zinc (30%)",
+          "durability": "Moderately durable, tarnishes easily",
+          "price_range": "Low"
+        }
+      },
+      {
+        "name": "zirconium",
+        "types": [
+          "zirconium alloy"
+        ],
+        "properties": {
+          "color": "Silvery-white",
+          "purity": "100%",
+          "durability": "Highly durable, resistant to corrosion",
+          "price_range": "High"
+        }
+      },
+      {
+        "name": "tungsten",
+        "types": [
+          "tungsten carbide"
+        ],
+        "properties": {
+          "color": "Silver-gray",
+          "purity": "100%",
+          "durability": "Extremely durable, scratch-resistant",
+          "price_range": "Medium to High"
+        }
+      },
+      {
+        "name": "rhodium",
+        "types": [
+          "rhodium-plated",
+          "rhodium alloy"
+        ],
+        "properties": {
+          "color": "Silver-white",
+          "purity": "100%",
+          "durability": "Highly durable, tarnish-resistant",
+          "price_range": "High"
+        }
+      }
+    ],
+    "gemstones": [
+    {
+      "name": "diamond",
+      "types": [
+        "white diamond",
+        "fancy colored diamond",
+        "champagne diamond",
+        "blue diamond",
+        "black diamond"
+      ],
+      "properties": {
+        "color": "Colorless, various colors",
+        "hardness": [10],
+        "clarity": "Flawless to Included",
+        "transparency": "Transparent",
+        "price_range": "High"
+      }
+    },
+    {
+      "name": "ruby",
+      "types": [
+        "natural ruby",
+        "synthetic ruby"
+      ],
+      "properties": {
+        "color": "Red (various shades)",
+        "hardness": [9],
+        "clarity": "Clear to Slightly Included",
+        "transparency": "Transparent",
+        "price_range": "High"
+      }
+    },
+    {
+      "name": "sapphire",
+      "types": [
+        "natural sapphire",
+        "synthetic sapphire",
+        "padparadscha sapphire"
+      ],
+      "properties": {
+        "color": "Blue (other colors exist)",
+        "hardness": [9],
+        "clarity": "Clear to Slightly Included",
+        "transparency": "Transparent",
+        "price_range": "Medium to High"
+      }
+    },
+    {
+      "name": "emerald",
+      "types": [
+        "natural emerald",
+        "synthetic emerald"
+      ],
+      "properties": {
+        "color": "Green",
+        "hardness": [7.5, 8],
+        "clarity": "Moderately included, often treated",
+        "transparency": "Transparent to Translucent",
+        "price_range": "High"
+      }
+    },
+    {
+      "name": "amethyst",
+      "types": [
+        "natural amethyst",
+        "synthetic amethyst"
+      ],
+      "properties": {
+        "color": "Purple (various shades)",
+        "hardness": [7],
+        "clarity": "Clear to Slightly Included",
+        "transparency": "Transparent",
+        "price_range": "Medium"
+      }
+    },
+    {
+      "name": "topaz",
+      "types": [
+        "blue topaz",
+        "imperial topaz",
+        "white topaz"
+      ],
+      "properties": {
+        "color": "Blue, Yellow, Pink, Clear",
+        "hardness": [8],
+        "clarity": "Clear",
+        "transparency": "Transparent",
+        "price_range": "Medium"
+      }
+    },
+    {
+      "name": "garnet",
+      "types": [
+        "almandine garnet",
+        "pyrope garnet",
+        "tsavorite garnet"
+      ],
+      "properties": {
+        "color": "Red, Green, Yellow",
+        "hardness": [6.5, 7, 7.5],
+        "clarity": "Clear to Slightly Included",
+        "transparency": "Transparent to Translucent",
+        "price_range": "Low to Medium"
+      }
+    },
+    {
+      "name": "aquamarine",
+      "types": [
+        "natural aquamarine",
+        "synthetic aquamarine"
+      ],
+      "properties": {
+        "color": "Blue to Blue-Green",
+        "hardness": [7.5, 8],
+        "clarity": "Clear",
+        "transparency": "Transparent",
+        "price_range": "Medium"
+      }
+    },
+    {
+      "name": "peridot",
+      "types": [
+        "natural peridot",
+        "synthetic peridot"
+      ],
+      "properties": {
+        "color": "Green",
+        "hardness": [6.5, 7],
+        "clarity": "Clear",
+        "transparency": "Transparent",
+        "price_range": "Medium"
+      }
+    },
+    {
+      "name": "opal",
+      "types": [
+        "white opal",
+        "black opal",
+        "fire opal",
+        "boulder opal"
+      ],
+      "properties": {
+        "color": "White, Black, Fire, Boulder",
+        "hardness": [5.5, 6.5],
+        "clarity": "Opaque to Transparent",
+        "transparency": "Opaque to Transparent",
+        "price_range": "Medium to High"
+      }
+    },
+    {
+      "name": "citrine",
+      "types": [
+        "natural citrine",
+        "synthetic citrine"
+      ],
+      "properties": {
+        "color": "Yellow to Yellow-Orange",
+        "hardness": [7],
+        "clarity": "Clear",
+        "transparency": "Transparent",
+        "price_range": "Medium"
+      }
+    },
+    {
+      "name": "tourmaline",
+      "types": [
+        "rubellite tourmaline",
+        "paraiba tourmaline",
+        "green tourmaline"
+      ],
+      "properties": {
+        "color": "Green, Pink, Blue, Red, Yellow",
+        "hardness": [7, 7.5],
+        "clarity": "Clear to Slightly Included",
+        "transparency": "Transparent",
+        "price_range": "Medium to High"
+      }
+    },
+    {
+      "name": "tanzanite",
+      "types": [
+        "natural tanzanite"
+      ],
+      "properties": {
+        "color": "Blue to Violet",
+        "hardness": [6.5, 7],
+        "clarity": "Clear to Slightly Included",
+        "transparency": "Transparent",
+        "price_range": "High"
+      }
+    },
+    {
+      "name": "moonstone",
+      "types": [
+        "rainbow moonstone",
+        "blue moonstone"
+      ],
+      "properties": {
+        "color": "White, Blue",
+        "hardness": [6, 6.5],
+        "clarity": "Opaque to Transparent",
+        "transparency": "Opaque to Transparent",
+        "price_range": "Medium"
+      }
+    },
+    {
+      "name": "chrysoprase",
+      "types": [
+        "natural chrysoprase"
+      ],
+      "properties": {
+        "color": "Green",
+        "hardness": [6.5, 7],
+        "clarity": "Opaque",
+        "transparency": "Opaque",
+        "price_range": "Medium"
+      }
+    },
+    {
+      "name": "lapis lazuli",
+      "types": [
+        "natural lapis lazuli",
+        "synthetic lapis lazuli"
+      ],
+      "properties": {
+        "color": "Blue",
+        "hardness": [5, 5.5],
+        "clarity": "Opaque",
+        "transparency": "Opaque",
+        "price_range": "Medium"
+      }
+    },
+    {
+      "name": "glass",
+      "types": [
+        "rhinestone"
+        ],
+      "properties": {
+        "color": "Blue",
+        "hardness": [5, 5.5],
+        "clarity": "Opaque",
+        "transparency": "Opaque",
+        "price_range": "Medium"
+      }
+    }
+  ]
+  }

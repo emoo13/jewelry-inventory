@@ -1,0 +1,290 @@
+{
+    "plating_types": [
+    {
+      "name": "Gold Plating",
+      "description": "Gold plating involves applying a thin layer of gold to a base metal, such as brass or sterling silver. This is a common plating method to give jewelry the appearance of solid gold without the high cost.",
+      "materials_used": ["Gold", "Brass", "Sterling Silver"],
+      "thickness": "Varies (usually 0.5 to 2.5 microns)",
+      "durability": "Moderate",
+      "uses": ["Rings", "Necklaces", "Earrings", "Bracelets"]
+    },
+    {
+      "name": "Rhodium Plating",
+      "description": "Rhodium plating is a process where a thin layer of rhodium, a precious metal in the platinum family, is applied to jewelry. This plating is typically used for white gold jewelry to give it a bright, white, shiny finish and to prevent tarnishing.",
+      "materials_used": ["Rhodium", "White Gold", "Silver"],
+      "thickness": "0.1 to 0.2 microns",
+      "durability": "High",
+      "uses": ["White Gold Rings", "Necklaces", "Earrings", "Bracelets"]
+    },
+    {
+      "name": "Silver Plating",
+      "description": "Silver plating involves applying a layer of silver over a base metal to give the item the appearance of solid silver. It's often used to improve the look of inexpensive jewelry or to create an aesthetic effect.",
+      "materials_used": ["Silver", "Brass", "Copper"],
+      "thickness": "Varies (usually 1 to 2 microns)",
+      "durability": "Moderate",
+      "uses": ["Rings", "Necklaces", "Bracelets", "Earrings"]
+    },
+    {
+      "name": "Platinum Plating",
+      "description": "Platinum plating involves applying a thin layer of platinum over jewelry. It's often used to enhance the durability and appearance of white gold or sterling silver jewelry, giving it a durable, high-end finish.",
+      "materials_used": ["Platinum", "White Gold", "Sterling Silver"],
+      "thickness": "0.1 to 0.2 microns",
+      "durability": "High",
+      "uses": ["Rings", "Earrings", "Necklaces", "Bracelets"]
+    },
+    {
+      "name": "Palladium Plating",
+      "description": "Palladium plating involves using palladium, a member of the platinum group, to plate jewelry. This plating is hypoallergenic and provides a white, shiny finish.",
+      "materials_used": ["Palladium", "White Gold", "Silver"],
+      "thickness": "0.1 to 0.2 microns",
+      "durability": "High",
+      "uses": ["Rings", "Necklaces", "Bracelets"]
+    },
+    {
+      "name": "Nickel Plating",
+      "description": "Nickel plating is the application of a nickel layer onto jewelry. It’s often used as a base for other plating processes but is less common for direct use in high-quality jewelry due to the potential for allergic reactions.",
+      "materials_used": ["Nickel", "Brass", "Copper"],
+      "thickness": "Varies (typically 2 to 10 microns)",
+      "durability": "Moderate to High",
+      "uses": ["Base Jewelry", "Costume Jewelry"]
+    },
+    {
+      "name": "Copper Plating",
+      "description": "Copper plating involves applying a layer of copper to a piece of jewelry, often as a base layer for further plating. It is used to give a reddish-brown finish and can help with the longevity of other plating types.",
+      "materials_used": ["Copper", "Brass", "Nickel"],
+      "thickness": "Varies",
+      "durability": "Moderate",
+      "uses": ["Rings", "Bracelets", "Necklaces"]
+    },
+    {
+      "name": "Rose Gold Plating",
+      "description": "Rose gold plating involves applying a layer of rose gold (a blend of gold, copper, and silver) to a piece of jewelry. It is used to give the piece a warm, pinkish hue, often associated with romantic or vintage-style jewelry.",
+      "materials_used": ["Rose Gold", "Copper", "Brass"],
+      "thickness": "Varies",
+      "durability": "Moderate",
+      "uses": ["Rings", "Necklaces", "Earrings", "Bracelets"]
+    },
+    {
+      "name": "Black Rhodium Plating",
+      "description": "Black rhodium plating uses rhodium in a black color to give a dark, sleek, and edgy appearance. This plating is often used in modern and fashion-forward jewelry.",
+      "materials_used": ["Rhodium", "Brass", "Sterling Silver"],
+      "thickness": "Varies (typically 0.1 to 0.2 microns)",
+      "durability": "Moderate",
+      "uses": ["Rings", "Earrings", "Necklaces"]
+    },
+    {
+      "name": "Gold Vermeil",
+      "description": "Gold vermeil is a thicker and more durable version of gold plating, where a layer of gold (at least 10 karats) is applied to a base of sterling silver. It offers a rich, gold appearance at a more affordable price.",
+      "materials_used": ["Gold", "Sterling Silver"],
+      "thickness": "2.5 microns or more",
+      "durability": "High",
+      "uses": ["Rings", "Necklaces", "Bracelets", "Earrings"]
+    },
+    {
+      "name": "Gold-Filled Plating",
+      "description": "Gold-filled jewelry involves a thicker layer of gold (at least 10 karat) bonded to a base metal, often brass. It is more durable and resistant to wear than regular gold plating.",
+      "materials_used": ["Gold", "Brass"],
+      "thickness": "14 to 24 karats (varies)",
+      "durability": "High",
+      "uses": ["Rings", "Necklaces", "Bracelets", "Earrings"]
+    }
+  ],
+  "gemstone_clarity_types": [
+    {
+      "name": "Flawless (FL)",
+      "acronym": "FL",
+      "description": "A Flawless gemstone has no internal or external inclusions visible under 10x magnification. It is the highest clarity grade for gemstones and is extremely rare.",
+      "common_gemstones": ["Diamonds"],
+      "uses": ["High-end Jewelry", "Investment Pieces"]
+    },
+    {
+      "name": "Internally Flawless (IF)",
+      "acronym": "IF",
+      "description": "An Internally Flawless gemstone has no internal inclusions visible under 10x magnification, but it may have minor surface blemishes that are not visible to the naked eye.",
+      "common_gemstones": ["Diamonds", "Sapphires", "Emeralds"],
+      "uses": ["High-end Jewelry", "Luxury Jewelry"]
+    },
+    {
+      "name": "Very, Very Slightly Included (VVS1)",
+      "acronym": "VVS1",
+      "description": "VVS gemstones have minute inclusions that are very difficult to detect even under 10x magnification. VVS1 has fewer inclusions and is clearer than VVS2.",
+      "common_gemstones": ["Diamonds", "Sapphires", "Rubies"],
+      "uses": ["High-end Jewelry", "Engagement Rings"]
+    },
+    {
+        "name": "Very, Very Slightly Included (VVS2)",
+        "acronym": "VVS2",
+        "description": "VVS gemstones have minute inclusions that are very difficult to detect even under 10x magnification. VVS1 has fewer inclusions and is clearer than VVS2.",
+        "common_gemstones": ["Diamonds", "Sapphires", "Rubies"],
+        "uses": ["High-end Jewelry", "Engagement Rings"]
+    },
+    {
+      "name": "Very Slightly Included (VS1)",
+      "acronym": "VS1",
+      "description": "VS gemstones have slight inclusions that are difficult to detect under 10x magnification but are typically visible under magnification. VS1 has fewer inclusions than VS2.",
+      "common_gemstones": ["Diamonds", "Sapphires", "Emeralds"],
+      "uses": ["Fine Jewelry", "Engagement Rings", "Rings"]
+    },
+    {
+        "name": "Very Slightly Included (VS2)",
+        "acronym": "VS2",
+        "description": "VS gemstones have slight inclusions that are difficult to detect under 10x magnification but are typically visible under magnification. VS1 has fewer inclusions than VS2.",
+        "common_gemstones": ["Diamonds", "Sapphires", "Emeralds"],
+        "uses": ["Fine Jewelry", "Engagement Rings", "Rings"]
+    },
+    {
+      "name": "Slightly Included (SI1)",
+      "acronym": "SI1",
+      "description": "SI gemstones have inclusions that are noticeable under 10x magnification and may or may not be visible to the naked eye. SI1 inclusions are less visible than SI2.",
+      "common_gemstones": ["Diamonds", "Sapphires", "Emeralds"],
+      "uses": ["Affordable Jewelry", "Rings", "Earrings"]
+    },
+    {
+      "name": "Slightly Included (SI2)",
+      "acronym": "SI2",
+      "description": "SI gemstones have inclusions that are noticeable under 10x magnification and may or may not be visible to the naked eye. SI1 inclusions are less visible than SI2.",
+      "common_gemstones": ["Diamonds", "Sapphires", "Emeralds"],
+      "uses": ["Affordable Jewelry", "Rings", "Earrings"]
+    },
+    {
+      "name": "Included (I1)",
+      "acronym": "I1",
+      "description": "Included gemstones have obvious inclusions that are visible to the naked eye and affect the overall appearance of the stone. I3 has the most visible and severe inclusions.",
+      "common_gemstones": ["Diamonds", "Sapphires", "Emeralds"],
+      "uses": ["Costume Jewelry", "Low-budget Jewelry"]
+    },
+    {
+      "name": "Included (I2)",
+      "acronym": "I2",
+      "description": "Included gemstones have obvious inclusions that are visible to the naked eye and affect the overall appearance of the stone. I3 has the most visible and severe inclusions.",
+      "common_gemstones": ["Diamonds", "Sapphires", "Emeralds"],
+      "uses": ["Costume Jewelry", "Low-budget Jewelry"]
+    },
+    {
+      "name": "Included (I3)",
+      "acronym": "I3",
+      "description": "Included gemstones have obvious inclusions that are visible to the naked eye and affect the overall appearance of the stone. I3 has the most visible and severe inclusions.",
+      "common_gemstones": ["Diamonds", "Sapphires", "Emeralds"],
+      "uses": ["Costume Jewelry", "Low-budget Jewelry"]
+    },
+    {
+      "name": "Transparent",
+      "acronym": "Transparent",
+      "description": "A gemstone with no visible inclusions and a completely clear appearance to the naked eye. It is typically used for gemstones that naturally form without noticeable internal flaws.",
+      "common_gemstones": ["Sapphires", "Topaz", "Aquamarine"],
+      "uses": ["Fine Jewelry", "Engagement Rings"]
+    },
+    {
+      "name": "Semi-transparent",
+      "acronym": "Semi-transparent",
+      "description": "Semi-transparent gemstones have minor inclusions or slight color variations that slightly reduce clarity, though they still allow light to pass through the stone.",
+      "common_gemstones": ["Amethyst", "Garnet", "Citrine"],
+      "uses": ["Casual Jewelry", "Fashion Rings", "Earrings"]
+    },
+    {
+      "name": "Opaque",
+      "acronym": "Opaque",
+      "description": "Opaque gemstones have so many inclusions that they do not allow light to pass through, making the stone appear solid. This is often the case with gemstones that are not typically used in high-quality jewelry.",
+      "common_gemstones": ["Opals", "Turquoise", "Lapis Lazuli"],
+      "uses": ["Costume Jewelry", "Beaded Jewelry"]
+    }
+  ],
+  "gemstone_cuts": [
+    {
+      "name": "round brilliant",
+      "description": "the round brilliant cut is one of the most popular and widely used gemstone cuts, particularly for diamonds. it features 58 facets designed to maximize light reflection and brilliance.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies", "emeralds"],
+      "uses": ["engagement rings", "fine jewelry"]
+    },
+    {
+      "name": "princess cut",
+      "description": "the princess cut is a square or rectangular shape with pointed corners, often used in engagement rings. it has a high number of facets that reflect light well, offering a brilliant shine.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies", "emeralds"],
+      "uses": ["engagement rings", "earrings", "rings"]
+    },
+    {
+      "name": "emerald cut",
+      "description": "the emerald cut is a rectangular shape with beveled corners and a stepped, ladder-like facet arrangement. it is known for its elegance and is often used for gemstones with high clarity.",
+      "common_gemstones": ["emeralds", "sapphires", "diamonds", "aquamarine"],
+      "uses": ["fine jewelry", "rings", "earrings"]
+    },
+    {
+      "name": "asscher cut",
+      "description": "the asscher cut is similar to the emerald cut but is square in shape with a more defined step-cut facet pattern. it often has a vintage or art deco aesthetic.",
+      "common_gemstones": ["diamonds", "sapphires", "emeralds"],
+      "uses": ["engagement rings", "rings"]
+    },
+    {
+      "name": "cushion cut",
+      "description": "the cushion cut has rounded corners and larger facets, resembling a pillow shape. this cut is known for its vintage appeal and soft, romantic look.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies", "emeralds"],
+      "uses": ["engagement rings", "rings", "necklaces"]
+    },
+    {
+      "name": "oval cut",
+      "description": "the oval cut is an elongated round shape that combines the brilliance of a round cut with a unique, elongated appearance. it’s great for larger gemstones.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies", "emeralds"],
+      "uses": ["engagement rings", "earrings", "rings"]
+    },
+    {
+      "name": "marquise cut",
+      "description": "the marquise cut is an elongated shape with pointed ends, resembling a football or boat shape. this cut creates the illusion of a larger gemstone due to its length.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies", "emeralds"],
+      "uses": ["rings", "earrings", "necklaces"]
+    },
+    {
+      "name": "pear cut",
+      "description": "the pear cut is a teardrop shape, with a rounded end and a pointed tip. it is elegant and timeless, often used in pendants and earrings.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies", "emeralds"],
+      "uses": ["pendants", "earrings", "rings"]
+    },
+    {
+      "name": "heart cut",
+      "description": "the heart cut is a variation of the pear cut, featuring a heart-shaped gemstone. it is a symbol of love and is often used in romantic or sentimental jewelry pieces.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies", "emeralds"],
+      "uses": ["pendants", "rings", "earrings"]
+    },
+    {
+      "name": "baguette cut",
+      "description": "the baguette cut is a long, rectangular shape with straight edges, typically with step-cut facets. this cut is often used as side stones in rings or as accent stones.",
+      "common_gemstones": ["diamonds", "sapphires", "emeralds"],
+      "uses": ["side stones", "accent stones", "bracelets"]
+    },
+    {
+      "name": "trillion cut",
+      "description": "the trillion cut is a triangular shape with sharp, straight edges. it is a modern cut that can be used as the centerpiece or accent stones in jewelry.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies"],
+      "uses": ["rings", "earrings", "necklaces"]
+    },
+    {
+      "name": "radiant cut",
+      "description": "the radiant cut is a rectangular or square cut with trimmed corners and brilliant facets. it combines the brilliance of the round brilliant cut with the shape of the emerald cut.",
+      "common_gemstones": ["diamonds", "sapphires", "rubies", "emeralds"],
+      "uses": ["engagement rings", "rings", "earrings"]
+    },
+    {
+      "name": "cabochon cut",
+      "description": "the cabochon cut features a rounded, smooth top with a flat bottom, often used for opaque or translucent gemstones. this cut does not have facets and emphasizes the stone's color and texture.",
+      "common_gemstones": ["opals", "turquoise", "moonstone", "jade"],
+      "uses": ["rings", "brooches", "pendants"]
+    },
+    {
+      "name": "step cut",
+      "description": "the step cut is characterized by rows of facets that resemble steps, often used for square or rectangular gemstones. it provides a clean, modern look and highlights the clarity of the stone.",
+      "common_gemstones": ["emeralds", "sapphires", "diamonds"],
+      "uses": ["rings", "earrings", "brooches"]
+    },
+    {
+      "name": "rose cut",
+      "description": "the rose cut features a flat bottom with a domed top covered in triangular facets, giving the stone a rose-like appearance. it’s commonly used for vintage-style jewelry.",
+      "common_gemstones": ["diamonds", "sapphires", "emeralds"],
+      "uses": ["vintage jewelry", "brooches", "necklaces"]
+    },
+    {
+      "name": "old mine cut",
+      "description": "the old mine cut is an antique diamond cut with a square or cushion shape and a high crown. it has fewer facets than modern cuts but offers a unique, vintage appeal.",
+      "common_gemstones": ["diamonds"],
+      "uses": ["antique jewelry", "rings", "earrings"]
+    }
+  ]
+}

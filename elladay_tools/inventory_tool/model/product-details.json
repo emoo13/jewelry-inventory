@@ -1,0 +1,12 @@
+{
+    "id" : 0,
+    "sku" : "COSEM-000089",
+    "category" : "Vintage Earrings",
+    "color" : ["Pink", "Gold"],
+    "shade" : ["LavenderBlush"],
+    "condition" : "Used-Good Condition",
+    "handmade" : false,
+    "manufacturer" : "Trifari",
+    "material" : ["enamel", "rhinestone"],
+    "tags" : ["vintage", "crown trifari", "1950", "clip on", "earrings", "pink", "floral", "gold tone"]
+}
