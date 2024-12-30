@@ -768,9 +768,9 @@ class MainUI(QtWidgets.QMainWindow):
 
         found_file = False
         while found_file is False:
-            file_names, _ = QtWidgets.QFileDialog.getOpenFileNames(self, "Select Files", "", "Image Files (*.png *.jpg);;All Files (*)", options=options)
+            file_names, _ = QtWidgets.QFileDialog.getOpenFileNames(self, "Select Files", "", "Image Files (*.png *.jpg *.jpeg);;All Files (*)", options=options)
 
-            valid_files = [file for file in file_names if file.endswith((".png", ".jpg"))]
+            valid_files = [file for file in file_names if file.lower().endswith((".png", ".jpg", ".jpeg"))]
             if valid_files:
                 print("Selected files:", valid_files)
                 final_list, query_val, query_key = self.controller_obj.handle_imgs(self.sku_pt_edit.toPlainText(),
