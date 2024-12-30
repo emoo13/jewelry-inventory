@@ -175,6 +175,108 @@
     ],
     "gemstones": [
     {
+      "name": "pearls",
+      "types": [
+        "Faux",
+        "Saltwater Natural Pearls",
+        "Freshwater Natural Pearls",
+        "Conch Pearls",
+        "Melo Melo Pearls",
+        "Clam Pearls",
+        "Scallop Pearls",
+        "Horse Conch Pearls",
+        "Akoya Pearls",
+        "South Sea Pearls",
+        "Tahitian Pearls",
+        "Keshi Pearls",
+        "Round Freshwater Pearls",
+        "Baroque Freshwater Pearls",
+        "Edison Pearls",
+        "Fireball Pearls",
+        "Glass Pearls",
+        "Shell Pearls",
+        "Plastic Pearls",
+        "White Pearls",
+        "Cream Pearls",
+        "Golden Pearls",
+        "Black Pearls",
+        "Pink Pearls",
+        "Lavender Pearls",
+        "Peacock Pearls",
+        "Round Pearls",
+        "Semi-Round Pearls",
+        "Button Pearls",
+        "Drop Pearls",
+        "Baroque Pearls",
+        "Circle Pearls",
+        "Coin Pearls",
+        "Rice Pearls",
+        "Japanese Akoya Pearls",
+        "Chinese Freshwater Pearls",
+        "Australian South Sea Pearls",
+        "Indonesian South Sea Pearls",
+        "Philippine South Sea Pearls",
+        "French Polynesian Tahitian Pearls"
+      ],
+      "properties": {
+        "color": "Colorless, various colors",
+        "hardness": [10],
+        "clarity": "Flawless to Included",
+        "transparency": "Transparent",
+        "price_range": "High"
+      }
+    },
+    {
+      "name": "acrylics",
+      "types": [
+      ],
+      "properties": {
+        "color": "Colorless, various colors",
+        "hardness": [10],
+        "clarity": "Flawless to Included",
+        "transparency": "Transparent",
+        "price_range": "High"
+      }
+    },
+    {
+      "name": "agate",
+      "types": [
+        "Blue Lace Agate",
+        "Moss Agate",
+        "Tree Agate",
+        "Fire Agate",
+        "Botswana Agate",
+        "Crazy Lace Agate",
+        "Laguna Agate",
+        "Turritella Agate",
+        "Dendritic Agate",
+        "Banded Agate",
+        "Dyed Blue Agate",
+        "Dyed Pink Agate",
+        "Dyed Green Agate",
+        "Rainbow Agate",
+        "Enhydro Agate",
+        "Plume Agate",
+        "Fairburn Agate",
+        "Condor Agate",
+        "Mexican Lace Agate",
+        "Lake Superior Agate",
+        "Agate Geodes",
+        "Druzy Agate",
+        "Iris Agate",
+        "Brazilian Agate",
+        "Madagascar Agate",
+        "Montana Agate"
+      ],
+      "properties": {
+        "color": "Colorless, various colors",
+        "hardness": [10],
+        "clarity": "Flawless to Included",
+        "transparency": "Transparent",
+        "price_range": "High"
+      }
+    },
+    {
       "name": "diamond",
       "types": [
         "white diamond",
