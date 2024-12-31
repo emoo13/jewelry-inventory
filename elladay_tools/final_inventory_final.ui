@@ -270,7 +270,7 @@
               </font>
              </property>
              <property name="currentIndex">
-              <number>3</number>
+              <number>0</number>
              </property>
              <property name="iconSize">
               <size>
@@ -3397,7 +3397,7 @@
                  <x>20</x>
                  <y>10</y>
                  <width>1041</width>
-                 <height>831</height>
+                 <height>832</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -4585,7 +4585,7 @@
      <x>0</x>
      <y>0</y>
      <width>2303</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

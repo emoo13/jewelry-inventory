@@ -19,152 +19,118 @@ METADATA_ID_MONGO = '6767ba05bcb627079b8d3806'
 class MainUI(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainUI, self).__init__()
-        self.model_obj = model.MongoModel()
-        self.controller_obj = controller.MongoController()
+
+        # ----- Initializations -----
         self.shade_list = []
         self.hex_list = []
         self.large_shade_list = []
         self.large_gemtype_list = []
+        self.sub_gem_result = []
+
+        # ----- Model -----
+        self.model_obj = model.MongoModel()
         self.model_connection = self.model_obj.connection_to_mongo()
+
+        # ----- Query Getters -----
         self.color_list = self.color_query()
         self.cond_list = self.condition_query()
         self.cat_list = self.category_query()
-        self.subcat_list = self.subcategory_query()
+        self.gem_list = self.gem_query()
+        metal_list = self.metal_query()
         self.plat_list = self.platforms_query()
-        self.sell_status_list = self.sell_status_query()
+        self.plating_list = self.plating_query()
         self.product_list = self.product_query()
-        table_data = self.controller_obj.process_products(self.product_list)
-        self.sub_gem_result = []
+        self.sell_status_list = self.sell_status_query()
+        self.subcat_list = self.subcategory_query()
+
+        # ----- Controller -----
+        self.controller_obj = controller.MongoController()
+        self.gem_names = self.controller_obj.process_materials(self.gem_list)
+        self.metal_names = self.controller_obj.process_materials(metal_list)
+
+        # ----- Window Setup -----
         self.window = loadUi("final_inventory_final.ui", self)
-        self.new_gemstone_button = self.window.new_gemstone_button
-        self.new_gemstone_button.clicked.connect(lambda: self.open_gem_secondary_ui("gemstone_manage.ui"))
 
-        self.label_location_pt_edit = self.window.label_location_pt_edit
-        self.label_location_pt_edit.setLineWrapMode(QtWidgets.QPlainTextEdit.NoWrap)
-        self.search_label_dir_button = self.window.search_label_dir_button
-        self.search_label_dir_button.clicked.connect(lambda: self.open_file_label_dialog(self.label_location_pt_edit))
-
-        self.excel_location_pt_edit = self.window.excel_location_pt_edit
-        self.excel_location_pt_edit.setLineWrapMode(QtWidgets.QPlainTextEdit.NoWrap)
-        self.search_excel_dir_button = self.window.search_excel_dir_button
-        self.search_excel_dir_button.clicked.connect(lambda: self.open_file_label_dialog(self.excel_location_pt_edit))
-        self.excel_button = self.window.excel_button
-        self.excel_button.clicked.connect(self.export_to_excel)
-
-        self.manage_category_button = self.window.manage_category_button
-        self.manage_category_button.clicked.connect(lambda: self.open_secondary_ui("new_category.ui"))
-        
-        self.manage_metal_button = self.window.manage_metal_button
-        self.manage_metal_button.clicked.connect(lambda: self.open_secondary_ui("new_metal.ui"))
-
-        self.search_bar = self.window.search_bar
-        self.search_bar.installEventFilter(self)
-        self.search_button = self.window.search_button
-        self.search_button.clicked.connect(self.on_search_pressed)
-        self.clear_search_button = self.window.clear_search_button
-        self.clear_search_button.clicked.connect(self.on_clear_search_pressed)
-        self.clear_search_button.clicked.connect(self.on_clear_search_pressed)
-        self.delete_button = self.window.delete_button
-        self.delete_button.clicked.connect(self.on_delete_from_table)
-
-        # Detail Tab
-        self.all_clear_button.clicked.connect(self.clear_all)
-        self.all_save_button.clicked.connect(self.on_tab_save)
-
+        # ----- Calendar Initialization -----
         self.calendar = QtWidgets.QCalendarWidget(self)
         self.calendar.setHorizontalHeaderFormat(QtWidgets.QCalendarWidget.SingleLetterDayNames)
         self.calendar.clicked[QtCore.QDate].connect(self.on_date_selected)
 
-        self.images_directory_pt_edit = self.window.images_directory_pt_edit
-        self.image_label1 = self.window.image_label1
-        self.image_label2 = self.window.image_label2
-        self.image_label3 = self.window.image_label3
-        self.image_label4 = self.window.image_label4
-        self.image_label5 = self.window.image_label5
-        self.image_label6 = self.window.image_label6
-        self.platform_combo_box = self.window.platform_combo_box
-        self.platform_combo_box.addItems(self.plat_list)
-        self.sell_status_combo_box = self.window.sell_status_combo_box
-        self.sell_status_combo_box.addItems(self.sell_status_list)
-        self.research_pt_edit = self.window.research_pt_edit
-        self.url_pt_edit = self.window.url_pt_edit
-        self.my_price_pt_edit = self.window.my_price_pt_edit
-        self.misc_description_box = self.window.misc_description_box
+        # ----- DB Manage Buttons -----
+        self.new_gemstone_button = self.window.new_gemstone_button
+        self.new_gemstone_button.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        self.new_gemstone_button.setEnabled(False)
+        self.pricing_manage_button = self.window.pricing_manage_button
+        self.pricing_manage_button.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        self.pricing_manage_button.setEnabled(False)
+        self.manage_category_button = self.window.manage_category_button
+        self.manage_category_button.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        self.manage_category_button.setEnabled(False)
+        self.manage_metal_button = self.window.manage_metal_button
+        self.manage_metal_button.setEnabled(False)
+        # TODO: Update the functionality of these to allow editing of the database (add/delete)
+        # self.manage_metal_button.clicked.connect(lambda: self.open_secondary_ui("new_metal.ui"))
+        # self.new_gemstone_button.clicked.connect(lambda: self.open_gem_secondary_ui("gemstone_manage.ui"))
+        # self.manage_category_button.clicked.connect(lambda: self.open_secondary_ui("new_category.ui"))
+
+        # ----- Details Tab -----
+        self.name_pt_edit = self.window.name_pt_edit
+
+        #   - Tag Groupbox
         self.tag_list_widget = self.window.tag_list_widget
-        self.created_result_label = self.window.created_result_label
-        self.weight_before_pt_edit = self.window.weight_before_pt_edit
-        self.weight_after_pt_edit = self.window.weight_after_pt_edit
-        self.sub_category_combo_box = self.window.sub_category_combo_box
-        self.updated_result_label = self.window.updated_result_label
+        self.tag_pt_edit = self.window.tag_pt_edit
         self.tag_pt_edit = self.window.tag_pt_edit
         self.tag_pt_edit.installEventFilter(self)
         self.tag_pt_edit.setLineWrapMode(QtWidgets.QPlainTextEdit.NoWrap)
-        self.print_stat_result_label = self.window.print_stat_result_label
-        self.print_button = self.window.print_button
-        self.print_button.clicked.connect(self.print_data_label)
 
-        self.posted_pt_edit = self.window.posted_pt_edit
-        self.posted_pt_edit.mousePressEvent = self.show_calendar
+        #   - Creator Groupbox
+        self.manuf_pt_edit = self.window.manuf_pt_edit
 
-        # Dimensions
-        self.len_pt_edit = self.window.len_pt_edit
-        self.width_pt_edit = self.window.width_pt_edit
-        self.height_pt_edit = self.window.height_pt_edit
+        self.condition_combo_box = self.window.condition_combo_box
+        self.condition_combo_box.addItems(self.cond_list)
+        self.condition_combo_box.setCurrentIndex(-1)
+        self.condition_combo_box.activated.connect(self.show_dropdown)
 
-        self.clasp_len_pt_edit = self.window.clasp_len_pt_edit
-        self.clasp_width_pt_edit = self.window.clasp_width_pt_edit
-        self.clasp_height_pt_edit = self.window.clasp_height_pt_edit
+        self.handmade_combo_box = self.window.handmade_combo_box
+        self.handmade_list = ["", "Yes", "No", "Unknown"]
+        self.handmade_combo_box.addItems(self.handmade_list)
+        self.handmade_combo_box.setCurrentIndex(-1)
+        self.handmade_combo_box.activated.connect(self.show_dropdown)
 
-        self.focal_len_pt_edit = self.window.focal_len_pt_edit
-        self.focal_width_pt_edit = self.window.focal_width_pt_edit
-        self.focal_height_pt_edit = self.window.focal_height_pt_edit
+        #   - Inventory Groupbox
+        self.category_combo_box = self.window.category_combo_box
+        self.category_combo_box.addItems(self.cat_list)
+        self.category_combo_box.setCurrentIndex(-1)
+        self.category_combo_box.activated.connect(self.show_dropdown)
 
-        self.pin_len_pt_edit = self.window.pin_len_pt_edit
-        self.pin_width_pt_edit = self.window.pin_width_pt_edit
+        self.sub_category_combo_box = self.window.sub_category_combo_box
+        self.sub_category_combo_box.addItems(self.subcat_list)
+        self.sub_category_combo_box.setCurrentIndex(-1)
+        self.sub_category_combo_box.activated.connect(self.show_dropdown)
 
-        self.dimension_pt_list = [self.len_pt_edit,
-                            self.width_pt_edit,
-                            self.height_pt_edit,
-                            self.clasp_len_pt_edit,
-                            self.clasp_width_pt_edit,
-                            self.clasp_height_pt_edit,
-                            self.focal_len_pt_edit,
-                            self.focal_width_pt_edit,
-                            self.focal_height_pt_edit,
-                            self.pin_len_pt_edit,
-                            self.pin_width_pt_edit]
+        self.quan_pt_edit = self.window.quan_pt_edit
 
-        self.dim_clear_button = self.window.dim_clear_button
-        self.dim_clear_button.clicked.connect(lambda: self.clear_tab(pt_list=self.dimension_pt_list))
+        self.sku_pt_edit = self.window.sku_pt_edit
 
-        # Pricing
-        self.price_pt_list = [
-            self.research_pt_edit,
-            self.my_price_pt_edit,
-            self.url_pt_edit
-        ]
-        self.price_combo_list = [
-            self.sell_status_combo_box,
-            self.platform_combo_box]
-        self.price_clear_button = self.window.price_clear_button
-        self.price_clear_button.clicked.connect(lambda: self.clear_tab(pt_list=self.price_pt_list, combo_list=self.price_combo_list))
+        #   - Color Groupbox
+        self.main_color_combo_box = self.window.main_color_combo_box
+        self.main_color_combo_box.setEnabled(False)
+        self.main_shade_combo_box = self.window.main_shade_combo_box
+        self.main_shade_combo_box.setEnabled(False)
 
-        # Status
-        self.photo_checkbox = self.window.photo_checkbox
-        self.measure_checkbox = self.window.measure_checkbox
-        self.cleaning_checkbox = self.window.cleaning_checkbox
-        self.repair_checkbox = self.window.repair_checkbox
-        self.weighing_checkbox = self.window.weighing_checkbox
-        self.listed_checkbox = self.window.listed_checkbox
-        self.boxing_checkbox = self.window.boxing_checkbox
-        self.checkboxes = [self.photo_checkbox, self.measure_checkbox, self.cleaning_checkbox, self.repair_checkbox,
-                           self.weighing_checkbox, self.listed_checkbox, self.boxing_checkbox]
-        self.status_clear_button = self.window.status_clear_button
-        self.status_clear_button.clicked.connect(lambda: self.clear_tab(check_list=self.checkboxes))
+        self.color_combo_box = self.window.color_combo_box
+        self.color_combo_box.addItems(self.color_list)
+        self.color_combo_box.setCurrentIndex(-1)
+        self.color_combo_box.activated.connect(self.show_dropdown)
+        self.color_combo_box.currentIndexChanged.connect(self.populate_shade_dropdown)
 
-        #   - Gems Comboboxes
-        self.gem_list = self.gem_query()
-        self.gem_names = self.controller_obj.process_materials(self.gem_list)
+        self.shade_combo_box = self.window.shade_combo_box
+        self.shade_combo_box.setCurrentIndex(-1)
+        self.shade_combo_box.currentIndexChanged.connect(self.shade_dropdown)
+
+        self.color_display = self.window.color_display
+
+        #   - Gem Groupbox
         self.clarity_list = self.clarity_query()
         self.cut_list = self.cut_query()
         self.gemstone_combo_box = self.window.gemstone_combo_box
@@ -184,66 +150,141 @@ class MainUI(QtWidgets.QMainWindow):
 
         self.carat_gem_pt_edit = self.window.carat_gem_pt_edit
 
-        #   - Metal Comboboxes
-        metal_list = self.metal_query()
-        self.metal_names = self.controller_obj.process_materials(metal_list)
-        self.plating_list = self.plating_query()
+        #   - Metals Groupbox
         self.metal_combo_box = self.window.metal_combo_box
         self.metal_combo_box.addItems(self.metal_names)
+
         self.carat_pt_edit = self.window.carat_pt_edit
+
         self.plated_combo_box = self.window.plated_combo_box
         self.plated_combo_box.addItems(self.plating_list)
 
-        #   - Conditions ComboBox
-        self.condition_combo_box = self.window.condition_combo_box
-        self.condition_combo_box.addItems(self.cond_list)
-        self.condition_combo_box.setCurrentIndex(-1)
-        self.condition_combo_box.activated.connect(self.show_dropdown)
+        # ----- Dimensions Tab -----
+        self.len_pt_edit = self.window.len_pt_edit
+        self.width_pt_edit = self.window.width_pt_edit
+        self.height_pt_edit = self.window.height_pt_edit
 
-        #   - Handmade ComboBox
-        self.handmade_combo_box = self.window.handmade_combo_box
+        self.clasp_len_pt_edit = self.window.clasp_len_pt_edit
+        self.clasp_width_pt_edit = self.window.clasp_width_pt_edit
+        self.clasp_height_pt_edit = self.window.clasp_height_pt_edit
 
-        self.handmade_list = ["", "Yes", "No", "Unknown"]
-        self.handmade_combo_box.addItems(self.handmade_list)
-        self.handmade_combo_box.setCurrentIndex(-1)
-        self.handmade_combo_box.activated.connect(self.show_dropdown)
+        self.focal_len_pt_edit = self.window.focal_len_pt_edit
+        self.focal_width_pt_edit = self.window.focal_width_pt_edit
+        self.focal_height_pt_edit = self.window.focal_height_pt_edit
 
-        #   - Colors ComboBox
-        self.color_combo_box = self.window.color_combo_box
-        self.color_combo_box.addItems(self.color_list)
-        self.color_combo_box.setCurrentIndex(-1)
-        self.color_combo_box.activated.connect(self.show_dropdown)
-        self.color_combo_box.currentIndexChanged.connect(self.populate_shade_dropdown)
+        self.pin_len_pt_edit = self.window.pin_len_pt_edit
+        self.pin_width_pt_edit = self.window.pin_width_pt_edit
 
-        self.shade_combo_box = self.window.shade_combo_box
-        self.shade_combo_box.setCurrentIndex(-1)
-        self.shade_combo_box.currentIndexChanged.connect(self.shade_dropdown)
-        
-        #   - Category ComboBox
-        self.category_combo_box = self.window.category_combo_box
-        # self.category_combo_box.setEditable(True)
-        self.category_combo_box.addItems(self.cat_list)
-        self.category_combo_box.setCurrentIndex(-1)
-        self.category_combo_box.activated.connect(self.show_dropdown)
-        self.sub_category_combo_box.addItems(self.subcat_list)
-        self.sub_category_combo_box.setCurrentIndex(-1)
-        self.sub_category_combo_box.activated.connect(self.show_dropdown)
-        
-        #   - Manufacturer LineEdit
-        self.manuf_pt_edit = self.window.manuf_pt_edit
+        self.weight_before_pt_edit = self.window.weight_before_pt_edit
+        self.weight_after_pt_edit = self.window.weight_after_pt_edit
 
-        self.color_display = self.window.color_display
+        self.dimension_pt_list = [self.len_pt_edit,
+                            self.width_pt_edit,
+                            self.height_pt_edit,
+                            self.clasp_len_pt_edit,
+                            self.clasp_width_pt_edit,
+                            self.clasp_height_pt_edit,
+                            self.focal_len_pt_edit,
+                            self.focal_width_pt_edit,
+                            self.focal_height_pt_edit,
+                            self.pin_len_pt_edit,
+                            self.pin_width_pt_edit]
 
-        # Details Variables
-        self.quan_pt_edit = self.window.quan_pt_edit
-        self.sku_pt_edit = self.window.sku_pt_edit
-        self.tag_list_widget = self.window.tag_list_widget
-        self.name_pt_edit = self.window.name_pt_edit
-        self.tag_pt_edit = self.window.tag_pt_edit
+        self.dim_clear_button = self.window.dim_clear_button
+        self.dim_clear_button.clicked.connect(lambda: self.clear_tab(pt_list=self.dimension_pt_list))
+
+        # ----- Pricing Tab -----
+        self.platform_combo_box = self.window.platform_combo_box
+        self.platform_combo_box.addItems(self.plat_list)
+
+        self.sell_status_combo_box = self.window.sell_status_combo_box
+        self.sell_status_combo_box.addItems(self.sell_status_list)
+
+        self.research_pt_edit = self.window.research_pt_edit
+
+        self.url_pt_edit = self.window.url_pt_edit
+
+        self.my_price_pt_edit = self.window.my_price_pt_edit
+
+        self.price_pt_list = [
+            self.research_pt_edit,
+            self.my_price_pt_edit,
+            self.url_pt_edit
+        ]
+        self.price_combo_list = [
+            self.sell_status_combo_box,
+            self.platform_combo_box]
+        self.price_clear_button = self.window.price_clear_button
+        self.price_clear_button.clicked.connect(lambda: self.clear_tab(pt_list=self.price_pt_list, combo_list=self.price_combo_list))
+
+        # ----- Status Tab -----
+        self.photo_checkbox = self.window.photo_checkbox
+        self.measure_checkbox = self.window.measure_checkbox
+        self.cleaning_checkbox = self.window.cleaning_checkbox
+        self.repair_checkbox = self.window.repair_checkbox
+        self.weighing_checkbox = self.window.weighing_checkbox
+        self.listed_checkbox = self.window.listed_checkbox
+        self.boxing_checkbox = self.window.boxing_checkbox
+        self.checkboxes = [self.photo_checkbox, self.measure_checkbox, self.cleaning_checkbox, self.repair_checkbox,
+                           self.weighing_checkbox, self.listed_checkbox, self.boxing_checkbox]
+
+        self.created_result_label = self.window.created_result_label
+        self.updated_result_label = self.window.updated_result_label
+        self.status_clear_button = self.window.status_clear_button
+        self.status_clear_button.clicked.connect(lambda: self.clear_tab(check_list=self.checkboxes))
+
         self.created_result_label = self.window.created_result_label
         self.updated_result_label = self.window.updated_result_label
         self.print_stat_result_label = self.window.print_stat_result_label
+        self.posted_pt_edit = self.window.posted_pt_edit
+        self.posted_pt_edit.mousePressEvent = self.show_calendar
 
+        self.excel_location_pt_edit = self.window.excel_location_pt_edit
+        self.excel_location_pt_edit.setLineWrapMode(QtWidgets.QPlainTextEdit.NoWrap)
+        self.search_excel_dir_button = self.window.search_excel_dir_button
+        self.search_excel_dir_button.clicked.connect(lambda: self.open_file_label_dialog(self.excel_location_pt_edit))
+        self.excel_button = self.window.excel_button
+        self.excel_button.clicked.connect(self.export_to_excel)
+
+        self.label_location_pt_edit = self.window.label_location_pt_edit
+        self.label_location_pt_edit.setLineWrapMode(QtWidgets.QPlainTextEdit.NoWrap)
+        self.search_label_dir_button = self.window.search_label_dir_button
+        self.search_label_dir_button.clicked.connect(lambda: self.open_file_label_dialog(self.label_location_pt_edit))
+        self.print_stat_result_label = self.window.print_stat_result_label
+        self.print_button = self.window.print_button
+        self.print_button.clicked.connect(self.print_data_label)
+
+        # ----- Misc Tab -----
+        self.misc_description_box = self.window.misc_description_box
+        self.misc_clear_button = self.window.misc_clear_button
+        self.misc_clear_button.clicked.connect(lambda: self.clear_tab(pt_list=[self.misc_description_box]))
+        self.installEventFilter(self)
+
+        # ----- Images Tab -----
+        self.images_directory_pt_edit = self.window.images_directory_pt_edit
+        self.image_label1 = self.window.image_label1
+        self.image_label2 = self.window.image_label2
+        self.image_label3 = self.window.image_label3
+        self.image_label4 = self.window.image_label4
+        self.image_label5 = self.window.image_label5
+        self.image_label6 = self.window.image_label6
+
+        # ----- Search Bar -----
+        self.search_bar = self.window.search_bar
+        self.search_bar.installEventFilter(self)
+        self.search_button = self.window.search_button
+        self.search_button.clicked.connect(self.on_search_pressed)
+        self.clear_search_button = self.window.clear_search_button
+        self.clear_search_button.clicked.connect(self.on_clear_search_pressed)
+        self.clear_search_button.clicked.connect(self.on_clear_search_pressed)
+
+        # ----- GUI Buttons -----
+        self.all_clear_button = self.window.all_clear_button
+        self.all_clear_button.clicked.connect(self.clear_all)
+        self.all_save_button = self.window.all_save_button
+        self.all_save_button.clicked.connect(self.on_tab_save)
+
+        # ----- Detail Tab Collections -----
         self.detail_pt_list = [
             self.name_pt_edit,
             self.manuf_pt_edit,
@@ -275,7 +316,10 @@ class MainUI(QtWidgets.QMainWindow):
                                                                        combo_list=self.detail_combo_list,
                                                                        gp_list=self.detail_gp_list))
 
-        # Table Formatting
+        # ----- Process Table -----
+        self.delete_button = self.window.delete_button
+        self.delete_button.clicked.connect(self.on_delete_from_table)
+        table_data = self.controller_obj.process_products(self.product_list)
         self.jewel_table = self.window.jewel_table
         self.populate_table(table_data)
         font = self.jewel_table.font()
@@ -292,36 +336,6 @@ class MainUI(QtWidgets.QMainWindow):
 
         self.upload_button = self.window.upload_button
         self.upload_button.clicked.connect(self.open_file_dialog)
-
-        # Misc
-        self.misc_clear_button = self.window.misc_clear_button
-        self.misc_clear_button.clicked.connect(lambda: self.clear_tab(pt_list=[self.misc_description_box]))
-        self.installEventFilter(self)
-
-    # def name_gem_delete(self, combobox, name_text):
-    #     self.model_obj.delete_gemstones_from_db("name",
-    #                                             name_text,
-    #                                             parent_key="gemstones")
-    #     self.gem_list = self.gem_query()
-    #     self.gem_names = self.controller_obj.process_materials(self.gem_list)
-    #     combobox.clear()
-    #     combobox.addItems(self.gem_names)
-
-    # def clarity_gem_delete(self, combobox):
-    #     self.model_obj.delete_gemstones_from_db("acronym",
-    #                                             combobox.currentText().upper(),
-    #                                             parent_key="gemstone_clarity_types")
-    #     self.clarity_list = self.clarity_query()
-    #     combobox.clear()
-    #     combobox.addItems(self.clarity_list)
-
-    # def cut_gem_delete(self, combobox):
-    #     self.model_obj.delete_gemstones_from_db("name",
-    #                                             combobox.currentText().lower(),
-    #                                             parent_key="gemstone_cuts")
-    #     self.cut_list = self.cut_query()
-    #     combobox.clear()
-    #     combobox.addItems(self.cut_list)
 
     def delete_sub_data(self, key, combobox, name_text, parent_key=None, types=False):
         name_items = [x.lower() for x in self.get_combobox_items(combobox)]
